@@ -47,42 +47,29 @@ class SearchBar extends React.Component {
     }
 
     renderSortByOptions() {
-        return Object.keys(this.sortByOptions).map(
-            sortByOption => {
-                let sortByOptionValue = this.sortByOptions[sortByOption];
-                return (
-                    <li
-                        className={this.getSortByClass(sortByOptionValue)}
-                        onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
-                        key={sortByOptionValue}>
-                        {sortByOption}
-                    </li>
-                );
-            }
-        );
+        return Object.keys(this.sortByOptions).map(sortByOption => {
+            let sortByOptionValue = this.sortByOptions[sortByOption];
+            return (<li className={this.getSortByClass(sortByOptionValue)} onClick={this.handleSortByChange.bind(this, sortByOptionValue)} key={sortByOptionValue}>
+                {sortByOption}
+            </li>);
+        });
     }
 
     render() {
-        return (
-            <div className="SearchBar">
-                <div className="SearchBar-sort-options">
-                    <ul>
-                        {this.renderSortByOptions()}
-                    </ul>
-                </div>
-                <div className="SearchBar-fields">
-                    <input
-                        onChange={this.handleTermChange}
-                        placeholder="Search Businesses" />
-                    <input
-                        onChange={this.handleLocationChange}
-                        placeholder="Where?" />
-                </div>
-                <div className="SearchBar-submit" onClick={this.handleSearch}>
-                    <a>Let's Go</a>
-                </div>
+        return (<div className="SearchBar">
+            <div className="SearchBar-sort-options">
+                <ul>
+                    {this.renderSortByOptions()}
+                </ul>
             </div>
-        );
+            <div className="SearchBar-fields">
+                <input onChange={this.handleTermChange} placeholder="Search Businesses"/>
+                <input onChange={this.handleLocationChange} placeholder="Where?"/>
+            </div>
+            <div className="SearchBar-submit" onClick={this.handleSearch}>
+                <a>Let's Go</a>
+            </div>
+        </div>);
     }
 };
 
