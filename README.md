@@ -1,4 +1,9 @@
 #   ravenous
+[*ravenous*](https://ravenouscc.herokuapp.com/) is a Yelp-like web application.  Its primary functions include:
+
+-   Viewing a list of restaurants returned by the Yelp API
+-   Searching for restaurants within a city
+-   Sorting through restaurants using a filter
 
 ##  Prerequisites
 The following technologies are used to develop, deploy, and manage versions of *ravenous*:
@@ -17,14 +22,17 @@ To install the *ravenous* application on a local machine, refer to the following
 ##  Getting Started
 The following instructions will provide a copy of *ravenous* for development and testing purposes:
 
-1.  `npm start` to create a local instance of *ravenous*
-    -   *ravenous* will appear in your default browser on localhost and  listen on port 3000
+1.  `heroku local web` to create a local instance of *ravenous*
+    -   *ravenous* will appear in your default browser on localhost and  listen on port 5000
     -   As you save your changes, the browser will update automatically
 2.  Use **Ctrl-C** to exit the application
 
 ##  Testing
-### BusinessList
-The purpose of this component is to iterate through and return Business components.  To ensure the array is obtained, it can be logged to the console by preceding `this.props.businesses.map(...)` with `console.log(this.props.businesses) &&`.
+### BusinessList.js
+The purpose of this component is to iterate through and return Business components.  To ensure the array is obtained, it can be logged to the console by preceding `this.props.businesses.map(...)` with `console.log(this.props.businesses) &&`.  Upon executing a search, the business endpoints will be logged to the console as an array.
+
+### Yelp.js
+The purpose of this utility is to query the Yelp API and return a JSON object containing business information.  The business object can be logged to the console by preceding `return response.json();` with `console.log(response.json()) &&`.  This object can be used to determine other endpoints to explore throughout the development process.
 
 **Note**: More tests will become available as edge-cases and limitations are tested further
 
