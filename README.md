@@ -31,9 +31,6 @@ The following instructions will provide a copy of *ravenous* for development and
 ### BusinessList.js
 The purpose of this component is to iterate through and return Business components.  To ensure the array is obtained, it can be logged to the console by preceding `this.props.businesses.map(...)` with `console.log(this.props.businesses) &&`.  Upon executing a search, the business endpoints will be logged to the console as an array.
 
-### Yelp.js
-The purpose of this utility is to query the Yelp API and return a JSON object containing business information.  The business object can be logged to the console by preceding `return response.json();` with `console.log(response.json()) &&`.  This object can be used to determine other endpoints to explore throughout the development process.
-
 **Note**: More tests will become available as edge-cases and limitations are tested further
 
 ##  Deployment
